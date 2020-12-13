@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Products | Life Style Store</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--jQuery library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--Latest compiled and minified JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            background: url('img/bg1.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+
+        .navbar {
+            background: url('img/map.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+
+        /* .header{
+            background: url('img/content_block.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        } */
+
+        #products-jumbotron {
+            display: flex;
+            height: 275px;
+        }
+
+        #products-jumbotron img {
+            margin: auto;
+        }
+
+        .thumbnail {
+            background-color: rgb(236, 243, 245);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 250px;
+        }
+
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fadeInLeft {
+            -webkit-animation-name: fadeInLeft;
+            animation-name: fadeInLeft;
+        }
+
+        .comments-section {
+            height: fit-content;
+            margin: 3px 100px;
+            background-color: rgba(235, 245, 160, 0.801);
+            box-shadow: 0 0 20px rgb(196, 248, 7);
+            border-radius: 3px;
+        }
+
+        .heading {
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: 'Shadows Into Light', cursive;
+            display: flex;
+            padding: 5px;
+            margin: 15px 20px;
+        }
+
+        #com {
+            height: 30px;
+            margin: 5px;
+        }
+
+        .com1 {
+            display: flex;
+        }
+
+        .aside {
+            margin: 5px 30px;
+            padding: 5px;
+            border-left: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+
+        .aside img,
+        .aside1 img,
+        .aside2 img,
+        .aside3 img,
+        .aside4 img {
+            height: 20px;
+        }
+
+        .message {
+            padding-top: 25px;
+        }
+
+        .aside3 {
+            margin: 7px 30px;
+            padding: 5px;
+            border-left: 1px solid red;
+        }
+
+        .aside4 {
+            margin: 5px 30px 5px 210px;
+            padding: 5px;
+            border-left: 1px solid red;
+        }
+
+        .aside2 {
+            padding: 5px;
+            margin: 5px 30px 5px 120px;
+            border-left: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+
+        #form {
+            background-color: rgba(128, 255, 0, 0.452);
+            width: 70%;
+            margin: auto;
+            border: 1px solid green;
+            border-radius: 10px;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        #form.active {
+            visibility: visible;
+            opacity: 1;
+            -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #msg {
+            margin: 3px 10px;
+            width: 80%;
+            border: none;
+            border-bottom: 1px solid black;
+            background-color: transparent;
+            border-radius: 20px;
+        }
+
+        #name3 {
+            margin: 3px 10px;
+            width: 80%;
+            border: none;
+            border-bottom: 1px solid black;
+            background-color: transparent;
+            border-radius: 20px;
+        }
+
+        .name p {
+            position: relative;
+            text-align: center;
+        }
+
+        .name2 {
+            display: flex;
+        }
+
+        .name2 p {
+            text-align: right;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: 'Shadows Into Light', cursive;
+
+        }
+
+        .add {
+            display: block;
+            width: 1000px;
+            text-align: right;
+        }
+
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+
+        #addcom {
+            position: relative;
+            left: 900px;
+            top: 10px;
+            text-align: right;
+            border-radius: 60%;
+            height: 40px;
+            box-shadow: 0 0 20px blue;
+        }
+
+        .name1 {
+            font-weight: bolder;
+        }
+
+        #addcom1 {
+            display: block;
+            margin: auto;
+            border: 1px solid green;
+            background-color: greenyellow;
+            justify-content: center;
+        }
+
+        #addcom1:hover {
+            background-color: green;
+            color: yellow;
+        }
+
+        .imga img {
+            margin: 3px 7px;
+        }
+
+        .thumbnail {
+            box-shadow: 0px 0px 20px black;
+            transition: transform .2s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.15);
+        }
+
+        .btn {
+            background-color: coral;
+            margin-bottom: 30px;
+        }
+
+        .btn2 {
+            display: inline-block;
+            padding: 13px 60px;
+            background-color: #fff;
+            color: #a43f49;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.5s;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin: 10px 420px;
+        }
+
+        .btn2:hover {
+            outline: none;
+            background-color: #a43f49;
+            color: #fff;
+        }
+        .nav-link{
+    color: aqua;
+    font-size: 20px;
+    font-weight: 720;
+    margin: 3px 4px;
+    
+}
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="font-family: 'Shadows Into Light', cursive; color: aqua; font-size: 30px; font-weight: bolder;">Aztec</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="products.html">Shop <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="receipt.html">Receipt <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container content">
+        <!-- Jumbotron Header -->
+        <div class="jumbotron home-spacer header" id="products-jumbotron">
+            <div class="tradehead">
+                <h1><span style="color: gold;">Sovereign Shop</span> of <span
+                        style="font-family: 'Shadows Into Light', cursive;">AZTEC</span> </h1>
+                <p>Best platform to trade and connect directly with suppliers</p>
+            </div>
+
+            <img src="img/trade.jpg">
+
+
+        </div>
+        <hr>
+        <button type="button" class="btn btn-primary">Gold Arts</button>
+        <div class="row text-center" id="cameras">
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/glass.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Gold Glass</h3>
+                        <p>Price :</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/gold.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Raw Gold</h3>
+                        <p>Price: Rs. 40,000.00 </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/goldart.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Gold Artifact</h3>
+                        <p>Price: Rs. 50000.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/goldart2.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Gold Artifact</h3>
+                        <p>Price: Rs. 50000.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary">Greenstone Arts</button>
+        <div class="row text-center" id="watches">
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/greenstone1.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Greenstone Mask</h3>
+                        <p>Price: Rs. 13000.00 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/greenstone2.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Greenstone Necklace</h3>
+                        <p>Price: Rs. 3000.00 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/greenstone3.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Greenstone Sculpture</h3>
+                        <p>Price: Rs. 8000.00 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/greenstone4.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Greenstone Artifact</h3>
+                        <p>Price: Rs. 18000.00 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary">Food And Beverages</button>
+        <div class="row text-center" id="shirts">
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/tortillas.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Tortillas</h3>
+                        <p>Price: Rs. 800.00 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/maize.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Maize</h3>
+                        <p>Price: Rs. 1000.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/beans.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztek Beans</h3>
+                        <p>Price: Rs. 1500.00</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/chile sauces.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Chile Sauces</h3>
+                        <p>Price Rs. 1300.00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-primary">Weapons</button>
+        <div class="row text-center" id="shirts">
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/Macuahuiti.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Macuahuiti</h3>
+                        <p>Price: Rs. 800.00 </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/Mexicolore.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Mexicolore</h3>
+                        <p>Price: Rs. 1000.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/knife.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztek Knife</h3>
+                        <p>Price: Rs. 1500.00</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 home-feature">
+                <div class="thumbnail">
+                    <img src="img/sacrificeknife.jpg" alt="">
+                    <div class="caption">
+                        <h3>Aztec Sacrifice Knife</h3>
+                        <p>Price Rs. 1300.00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <fieldset>
+                <button class="btn2" type="submit" onclick="document.location='./receipt.html'" target="_blank">
+                    Buy Now
+                </button>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <div class="comments-section">
+        <div class="heading">
+            <p>Comments</p>
+            <img src="img/chat.png" id="com">
+            <img src="img/plus.png" id="addcom" onclick="toggle()">
+        </div>
+
+        <div id="form" class="fadeInLeft">
+            <div class="name2">
+                <div class="imga">
+                    <img src="img/a.png">
+                </div>
+                <textarea rows="4" cols="50" id="msg" placeholder="   commenting publicaly as ATHARVA DEORE"></textarea>
+            </div>
+            <button id="addcom1">Comment</button>
+        </div>
+        <div class="comments">
+            <div class="com1">
+                <div class="aside">
+                    <div class="name1">Atharva</div>
+                    <div class="date">12/12/2020</div>
+                    <img src="img/reply.png">
+                </div>
+                <div class="message">
+                    I have bought Greenstone Necklace and its amazing..I loved it :)
+                </div>
+            </div>
+            <div class="com1">
+                <div class="aside2">
+                    <div class="name1">Aditya</div>
+                    <div class="date">12/12/2020</div>
+                    <img src="img/reply.png">
+                </div>
+                <div class="message">
+                    I also have it.
+                </div>
+            </div>
+            <div class="com1">
+                <div class="aside4">
+                    <div class="name1">Ganesh</div>
+                    <div class="date">12/12/2020</div>
+                    <img src="img/reply.png">
+                </div>
+                <div class="message">
+                    Actually I like to buy it but cost is too much :(
+                </div>
+            </div>
+            <div class="com1">
+                <div class="aside3">
+                    <div class="name1">Ankit</div>
+                    <div class="date">12/12/2020</div>
+                    <img src="img/reply.png">
+                </div>
+                <div class="message">
+                    I want a pottery.. is it available?
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function toggle() {
+        var popup = document.getElementById('form');
+        popup.classList.toggle('active');
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

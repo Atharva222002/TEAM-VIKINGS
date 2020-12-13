@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt Generator</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Eczar&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+      h1 {
+        text-align: center;
+        font-family: "Merriweather", serif;
+      }
+      h2 {
+        text-align: left;
+        font-family: "Eczar", serif;
+      }
+      legend {
+        font-size: xx-large;
+        text-align: center;
+        font-family: "Eczar", serif;
+      }
+      a{
+        font-size: 50px;
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="ml6">
+      <span class="text-wrapper">
+        <span class="letters">Aztec Civilization</span>
+      </span>
+    </h1>
+    <div class="line-dec"></div>
+    <div style="padding: 10px; position: fixed; margin: -102px 15px;">
+      <a href="products.html" class="sidenav-trigger btn-floating btn-large waves-effect waves-light black ">
+          <i class="fas fa-arrow-circle-left"></i>
+      </a>
+  </div>
+    <h2 style="text-align: center">
+      Welcome to the Souvenir Shop of Aztec Civilization!!
+    </h2>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="part1">
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-wrapper">
+              <label for="">First Name</label>
+              <input class="form-control-1" type="text" id="name" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Email</label>
+              <input class="form-control-1" type="text" id="email" />
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="part2">
+          <fieldset>
+            <legend>Your Orders</legend>
+            <h2>Greenstone Arts</h2>
+            <div class="form-wrapper">
+              <label for="">Aztec Greenstone Mask (Rs. 13000)</label>
+              <input class="form-control-1" type="text" id="agm" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Greenstone Necklace(Rs. 3000)</label>
+              <input class="form-control-1" type="text" id="agn" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Greenstone Sculpture (Rs. 8000)</label>
+              <input class="form-control-1" type="text" id="ags" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Grrenstone Artifact (Rs. 18000)</label>
+              <input class="form-control-1" type="text" id="aga" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <h2>Gold Arts</h2>
+            <div class="form-wrapper">
+              <label for="">Aztec Gold Glass (Rs. 13000)</label>
+              <input class="form-control-1" type="text" id="agg" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Raw Gold (Rs. 40000)</label>
+              <input class="form-control-1" type="text" id="arg" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Gold Artifact (Rs. 50000)</label>
+              <input class="form-control-1" type="text" id="aga_2" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Gold Artifact-2 (Rs. 50000)</label>
+              <input class="form-control-1" type="text" id="aga_3" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <h2>Food And Beverages</h2>
+            <div class="form-wrapper">
+              <label for="">Aztec Tortillas (Rs. 800)</label>
+              <input class="form-control-1" type="text" id="at" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Maize (Rs. 1000)</label>
+              <input class="form-control-1" type="text" id="am" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Beans (Rs. 1500)</label>
+              <input class="form-control-1" type="text" id="ab" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Chile Sauces (Rs. 1300)</label>
+              <input class="form-control-1" type="text" id="acs" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <h2>Weapons</h2>
+            <div class="form-wrapper">
+              <label for="">Aztec Macuahuiti (Rs. 800)</label>
+              <input class="form-control-1" type="text" id="amw" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Mexicolore (Rs. 1000)</label>
+              <input class="form-control-1" type="text" id="amwm" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Knife (Rs. 1500)</label>
+              <input class="form-control-1" type="text" id="ak" />
+            </div>
+            <div class="form-wrapper">
+              <label for="">Aztec Sacrifice Knife (Rs. 1300)</label>
+              <input class="form-control-1" type="text" id="ask" />
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="container" id="invoice">
+        <fieldset>
+          <legend>Your Bill</legend>
+          <h2>Your Name:<span id="name2"></span></h2>
+          <h2>Email: <span id="email2"></span></h2>
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Menu</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody id="bill">
+              <!-- <tr><td>agm</td><td>Rs. 10</td><td>1</td><td>10x1 = 10</td></tr> -->
+            </tbody>
+          </table>
+        </fieldset>
+        <h1>Total Amount: Rs. <span id="amount">0</span></h1>
+      </div>
+      <div>
+        <button class="bouncy" id="download">Download</button>
+      </div>
+      <!-- <div class="col-md-12 text-center mb-3">
+          <button class="btn btn-primary" id="download">download pdf</button>
+        </div> -->
+    </div>
+    <footer style="text-align: center; display: inline">
+      <h6>Copyright@TEAM VIKINGS</h6>
+    </footer>
+    <script>
+      var agm = 13000,
+        agn = 3000,
+        ags = 8000,
+        aga = 18000,
+        agg = 13000,
+        arg = 40000,
+        aga_2 = 50000,
+        aga_3 = 50000,
+        at = 800,
+        am = 1000,
+        ab = 1500,
+        acs = 1300,
+        amw = 800,
+        amwm = 1000,
+        ak = 1500,
+        ask = 1300;
+
+      var agm_q = 0,
+        agn_q = 0,
+        ags_q = 0,
+        aga_q = 0,
+        agg_q = 0,
+        arg_q = 0,
+        aga_2_q = 0,
+        aga_3_q = 0,
+        at_q = 0,
+        am_q = 0,
+        ab_q = 0,
+        acs_q = 0,
+        amw_q = 0,
+        amwm_q = 0,
+        ak_q = 0,
+        ask_q = 0;
+
+      var name = "",
+        email = "";
+
+      var agmBill = "",
+        agnBill = "",
+        agsBill = "",
+        agaBill = "",
+        aggBill = "",
+        argBill = "",
+        aga_2Bill = "",
+        aga_3Bill = "",
+        atBill = "",
+        amBill = "",
+        abBill = "",
+        acsBill = "",
+        amwBill = "",
+        amwmBill = "",
+        akBill = "",
+        askBill = "";
+
+      var total_amount = 0;
+      document.getElementById("name").addEventListener("keyup", function () {
+        // name = document.getElementById("name").value;
+
+        document.getElementById("name2").innerHTML = this.value;
+      });
+
+      document.getElementById("email").addEventListener("keyup", function () {
+        // name = document.getElementById("name").value;
+
+        document.getElementById("email2").innerHTML = this.value;
+      });
+
+      document.getElementById("agm").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          agmBill = "";
+          agm_q = 0;
+          showBill();
+        } else {
+          agm_q = this.value;
+          agmBill =
+            "<tr><td>Aztec Greenstone Mask</td><td>Rs. " +
+            agm +
+            "</td><td>" +
+            agm_q +
+            "</td><td>" +
+            agm +
+            "x" +
+            agm_q +
+            " = " +
+            agm * agm_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("agn").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          agnBill = "";
+          agn_q = 0;
+          showBill();
+        } else {
+          agn_q = this.value;
+          agnBill =
+            "<tr><td>Azcent Greenstone Necklace</td><td>Rs. " +
+            agn +
+            "</td><td>" +
+            agn_q +
+            "</td><td>" +
+            agn +
+            "x" +
+            agn_q +
+            " = " +
+            agn * agn_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("ags").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          agsBill = "";
+          ags_q = 0;
+          showBill();
+        } else {
+          ags_q = this.value;
+          agsBill =
+            "<tr><td>Azcent Greenstone Sculpture</td><td>Rs. " +
+            ags +
+            "</td><td>" +
+            ags_q +
+            "</td><td>" +
+            ags +
+            "x" +
+            ags_q +
+            " = " +
+            ags * ags_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("aga").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          agaBill = "";
+          aga_q = 0;
+          showBill();
+        } else {
+          aga_q = this.value;
+          agaBill =
+            "<tr><td>Azcent Greenstone Artifact</td><td>Rs. " +
+            aga +
+            "</td><td>" +
+            aga_q +
+            "</td><td>" +
+            aga +
+            "x" +
+            aga_q +
+            " = " +
+            aga * aga_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("agg").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          aggBill = "";
+          agg_q = 0;
+          showBill();
+        } else {
+          agg_q = this.value;
+          aggBill =
+            "<tr><td> Aztec Gold Glass </td><td>Rs. " +
+            agg +
+            "</td><td>" +
+            agg_q +
+            "</td><td>" +
+            agg +
+            "x" +
+            agg_q +
+            " = " +
+            agg * agg_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("arg").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          argBill = "";
+          arg_q = 0;
+          showBill();
+        } else {
+          arg_q = this.value;
+          argBill =
+            "<tr><td> Aztec Raw Gold </td><td>Rs. " +
+            arg +
+            "</td><td>" +
+            arg_q +
+            "</td><td>" +
+            arg +
+            "x" +
+            arg_q +
+            " = " +
+            arg * arg_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("aga_2").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          aga_2Bill = "";
+          aga_2_q = 0;
+          showBill();
+        } else {
+          aga_2_q = this.value;
+          aga_2Bill =
+            "<tr><td>Aztec Gold Artifact</td><td>Rs. " +
+            aga_2 +
+            "</td><td>" +
+            aga_2_q +
+            "</td><td>" +
+            aga_2 +
+            "x" +
+            aga_2_q +
+            " = " +
+            aga_2 * aga_2_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("aga_3").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          aga_3Bill = "";
+          aga_3_q = 0;
+          showBill();
+        } else {
+          aga_3_q = this.value;
+          aga_3Bill =
+            "<tr><td>Aztec Gold Artifact-2</td><td>Rs. " +
+            aga_3 +
+            "</td><td>" +
+            aga_3_q +
+            "</td><td>" +
+            aga_3 +
+            "x" +
+            aga_3_q +
+            " = " +
+            aga_3 * aga_3_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("at").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          atBill = "";
+          at_q = 0;
+          showBill();
+        } else {
+          at_q = this.value;
+          atBill =
+            "<tr><td>Aztec Tortillas</td><td>Rs. " +
+            at +
+            "</td><td>" +
+            at_q +
+            "</td><td>" +
+            at +
+            "x" +
+            at_q +
+            " = " +
+            at * at_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("am").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          amBill = "";
+          am_q = 0;
+          showBill();
+        } else {
+          am_q = this.value;
+          amBill =
+            "<tr><td>Aztec Maize</td><td>Rs. " +
+            am +
+            "</td><td>" +
+            am_q +
+            "</td><td>" +
+            am +
+            "x" +
+            am_q +
+            " = " +
+            am * am_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("ab").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          abBill = "";
+          ab_q = 0;
+          showBill();
+        } else {
+          ab_q = this.value;
+          abBill =
+            "<tr><td>Aztec Beans</td><td>Rs. " +
+            ab +
+            "</td><td>" +
+            ab_q +
+            "</td><td>" +
+            ab +
+            "x" +
+            ab_q +
+            " = " +
+            ab * ab_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("acs").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          acsBill = "";
+          acs_q = 0;
+          showBill();
+        } else {
+          acs_q = this.value;
+          acsBill =
+            "<tr><td>Aztec Chile Sauces </td><td>Rs. " +
+            acs +
+            "</td><td>" +
+            acs_q +
+            "</td><td>" +
+            acs +
+            "x" +
+            acs_q +
+            " = " +
+            acs * acs_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("amw").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          amwBill = "";
+          amw_q = 0;
+          showBill();
+        } else {
+          amw_q = this.value;
+          amwBill =
+            "<tr><td>Aztec Macuahuiti</td><td>Rs. " +
+            amw +
+            "</td><td>" +
+            amw_q +
+            "</td><td>" +
+            amw +
+            "x" +
+            amw_q +
+            " = " +
+            amw * amw_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("amwm").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          amwmBill = "";
+          amwm_q = 0;
+          showBill();
+        } else {
+          amwm_q = this.value;
+          amwmBill =
+            "<tr><td>Aztec Mexicolore</td><td>Rs. " +
+            amwm +
+            "</td><td>" +
+            amwm_q +
+            "</td><td>" +
+            amwm +
+            "x" +
+            amwm_q +
+            " = " +
+            amwm * amwm_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("ak").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          akBill = "";
+          ak_q = 0;
+          showBill();
+        } else {
+          ak_q = this.value;
+          akBill =
+            "<tr><td>Aztec Knife</td><td>Rs. " +
+            ak +
+            "</td><td>" +
+            ak_q +
+            "</td><td>" +
+            ak +
+            "x" +
+            ak_q +
+            " = " +
+            ak * ak_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      document.getElementById("ask").addEventListener("keyup", function () {
+        if (this.value == "" || this.value == 0) {
+          askBill = "";
+          ask_q = 0;
+          showBill();
+        } else {
+          ask_q = this.value;
+          askBill =
+            "<tr><td>Aztec Sacrifice Knife</td><td>Rs. " +
+            ask +
+            "</td><td>" +
+            ask_q +
+            "</td><td>" +
+            ask +
+            "x" +
+            ask_q +
+            " = " +
+            ask * ask_q +
+            "</td></tr>";
+          showBill();
+        }
+      });
+
+      function showBill() {
+        document.getElementById("bill").innerHTML =
+          agmBill +
+          agnBill +
+          agsBill +
+          agaBill +
+          aggBill +
+          argBill +
+          aga_2Bill +
+          aga_3Bill +
+          atBill +
+          amBill +
+          abBill +
+          acsBill +
+          amwBill +
+          amwmBill +
+          akBill +
+          askBill; //table statement
+        document.getElementById("amount").innerHTML =
+          agm * agm_q +
+          agn * agn_q +
+          ags * ags_q +
+          aga * aga_q +
+          agg * agg_q +
+          arg * arg_q +
+          aga_2 * aga_2_q +
+          aga_3 * aga_3_q +
+          at * at_q +
+          am * am_q +
+          ab * ab_q +
+          acs * acs_q +
+          amw * amw_q +
+          amwm * amwm_q +
+          ak * ak_q +
+          ask * ask_q; // total amount
+      }
+
+      document.getElementById("download").addEventListener("click", () => {
+        const invoice = this.document.getElementById("invoice");
+        console.log(invoice);
+        console.log(window);
+        var opt = {
+          margin: 1,
+          filename: "myfile.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
+        html2pdf().from(invoice).set(opt).save();
+      });
+
+      var textWrapper = document.querySelector(".ml6 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      anime
+        .timeline({ loop: true })
+        .add({
+          targets: ".ml6 .letter",
+          translateY: ["1.1em", 0],
+          translateZ: 0,
+          duration: 750,
+          delay: (el, i) => 50 * i,
+        })
+        .add({
+          targets: ".ml6",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000,
+        });
+    </script>
+  </body>
+</html>
